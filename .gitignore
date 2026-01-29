@@ -2,9 +2,9 @@
 
 !.gitignore
 
-!./src/
-!./docs/
+!src/*
+!docs/*
 
-!./README.md
-!./LICENSE.txt
+!README.md
+!LICENSE.txt
 
