@@ -1,0 +1,10 @@
+*
+
+!.gitignore
+
+!/src/
+!/docs/
+
+!/README.md
+!/LICENSE.txt
+
