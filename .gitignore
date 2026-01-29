@@ -1,9 +1,9 @@
-*
-!.gitignore
+*.log
 
-!src/
-!docs/
-
-!README.md
-!LICENSE.txt
-
+./lammps
+./meesh
+./openmpi
+./mimalloc
+./openfoam
+./syscall_count
+./installed_for_mem_alloc_exprs
