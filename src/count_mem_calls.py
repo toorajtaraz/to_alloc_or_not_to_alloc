@@ -24,8 +24,9 @@ def validate_binary(args):
 
 def handle_time(args):
     so_path = os.path.join(args.ldpreload, args.allocator_replacement)
-    if not os.path.isfile(so_path):
-        sys.exit("invalid ldpreload path or allocator shared object")
+    if args.allocator_replacement != "gnu":
+        if not os.path.isfile(so_path):
+            sys.exit("invalid ldpreload path or allocator shared object")
     return {
         "mode": "time",
         "binary": validate_binary(args),
@@ -58,8 +59,8 @@ def setup_argparse():
     time_parser.add_argument("--ldpreload", required=True)
     time_parser.add_argument(
         "--allocator-replacement",
-        choices={"libmimalloc.so"},
-        required=True,
+        choices={"libmimalloc.so", "gnu"},
+        default="gnu",
     )
     time_parser.set_defaults(func=handle_time)
 
@@ -141,38 +142,16 @@ elif config['mode'] == "time":
 
         return real_time, user_time, system_time
 
-    malloc_real_times = []
-    mimalloc_real_times = []
+    alloc_real_times = []
 
-    malloc_user_times = []
-    mimalloc_user_times = []
+    alloc_user_times = []
 
-    malloc_system_times = []
-    mimalloc_system_times = []
-    #
-    for _ in range(config['iters']):
-        try:
-            ru0 = resource.getrusage(resource.RUSAGE_CHILDREN)
-            t0 = time.perf_counter()
-            subprocess.run(command, check=True, stdout=subprocess.DEVNULL,
-                           stderr=subprocess.DEVNULL, text=True)
-
-            t1 = time.perf_counter()
-            ru1 = resource.getrusage(resource.RUSAGE_CHILDREN)
-            r = t1 - t0
-            u = ru1.ru_utime - ru0.ru_utime
-            s = ru1.ru_stime - ru0.ru_stime
-
-            malloc_real_times.append(r)
-            malloc_user_times.append(u)
-            malloc_system_times.append(s)
-        except subprocess.CalledProcessError as e:
-            print(f"App failed: {e}")
-            exit(-1)
+    alloc_system_times = []
 
     env = os.environ.copy()
 
-    env['LD_PRELOAD'] = config['so_path']
+    if config['allocator'] != "gnu":
+        env['LD_PRELOAD'] = config['so_path']
     for _ in range(config['iters']):
         try:
             ru0 = resource.getrusage(resource.RUSAGE_CHILDREN)
@@ -186,18 +165,15 @@ elif config['mode'] == "time":
             u = ru1.ru_utime - ru0.ru_utime
             s = ru1.ru_stime - ru0.ru_stime
 
-            mimalloc_real_times.append(r)
-            mimalloc_user_times.append(u)
-            mimalloc_system_times.append(s)
+            alloc_real_times.append(r)
+            alloc_user_times.append(u)
+            alloc_system_times.append(s)
         except subprocess.CalledProcessError as e:
             print(f"App failed: {e}")
             exit(-1)
 
-    print(sum(malloc_real_times))
-    print(sum(mimalloc_real_times))
+    print(sum(alloc_real_times))
 
-    print(sum(malloc_user_times))
-    print(sum(mimalloc_user_times))
+    print(sum(alloc_user_times))
 
-    print(sum(malloc_system_times))
-    print(sum(mimalloc_system_times))
+    print(sum(alloc_system_times))
