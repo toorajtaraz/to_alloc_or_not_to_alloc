@@ -1,0 +1,19 @@
+/home/ttaraz/project/lab/to_alloc_or_not_to_alloc
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full basic/laplacianFoam/flange
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full compressible/rhoCentralFoam/shockTube
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full combustion/chemFoam/h2
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full combustion/reactingFoam/RAS/SandiaD_LTS

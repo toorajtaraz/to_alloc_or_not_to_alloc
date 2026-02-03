@@ -539,12 +539,12 @@ COMMANDS=(
 
   # Transient incompressible (PISO / PIMPLE, LES)
   "foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity"
-  "foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/periodicHill"
-  "foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/surfaceMountedCube"
+  # "foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/periodicHill"
+  # "foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/surfaceMountedCube"
 
   # Compressible flow (larger fields, shocks)
   "foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012"
-  "foamTestTutorial -parallel -full compressible/rhoPimpleFoam/RAS/annularThermalMixer"
+  # "foamTestTutorial -parallel -full compressible/rhoPimpleFoam/RAS/annularThermalMixer"
   "foamTestTutorial -parallel -full compressible/rhoCentralFoam/shockTube"
 
   # Combustion / chemistry (allocation churn)
@@ -596,7 +596,7 @@ for allocator in "${!ALLOCATORS[@]}"; do
         python3 "$PYTHON_SCRIPT" \
           -c "$cmd" \
           time \
-          --iters 5 \
+          --iters 1 \
           --ldpreload "$ALLOC_LIB_DIR" \
           --allocator-replacement "$allocator_lib"
       )
