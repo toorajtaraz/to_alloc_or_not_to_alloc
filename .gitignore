@@ -1,11 +1,2 @@
 *.log
-
-lammps
-meesh
-openmpi
-mimalloc
-openfoam
-syscall_count
 installed_for_mem_alloc_exprs
-tcalloc
-jealloc

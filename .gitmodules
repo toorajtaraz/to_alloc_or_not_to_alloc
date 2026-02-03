@@ -1,0 +1,9 @@
+[submodule "allocs/jemalloc"]
+	path = allocs/jemalloc
+	url = https://github.com/facebook/jemalloc.git
+[submodule "allocs/mimalloc"]
+	path = allocs/mimalloc
+	url = https://github.com/microsoft/mimalloc.git
+[submodule "allocs/Hoard"]
+	path = allocs/Hoard
+	url = https://github.com/emeryberger/Hoard.git
