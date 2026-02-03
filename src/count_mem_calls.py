@@ -59,7 +59,7 @@ def setup_argparse():
     time_parser.add_argument("--ldpreload", required=True)
     time_parser.add_argument(
         "--allocator-replacement",
-        choices={"libmimalloc.so", "gnu"},
+        choices={"libmimalloc.so", "libjemalloc.so", "libhoard.so", "gnu"},
         default="gnu",
     )
     time_parser.set_defaults(func=handle_time)
