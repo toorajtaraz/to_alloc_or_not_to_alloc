@@ -168,9 +168,11 @@ elif config['mode'] == "time":
             alloc_real_times.append(r)
             alloc_user_times.append(u)
             alloc_system_times.append(s)
-        except subprocess.CalledProcessError as e:
-            print(f"App failed: {e}")
-            exit(-1)
+        except Exception as _:
+            print("-1.0 -1.0 -1.0")
+            print("-1.0 -1.0 -1.0")
+            print("-1.0 -1.0 -1.0")
+            exit(0)
 
     print(f"{sum(alloc_real_times)/len(alloc_real_times)
              } {min(alloc_real_times)} {max(alloc_real_times)}")
