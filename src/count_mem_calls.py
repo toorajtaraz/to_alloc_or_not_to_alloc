@@ -1,4 +1,6 @@
 import subprocess
+import resource
+import time
 import datetime
 import sys
 import os
@@ -78,7 +80,7 @@ output_log = f"strace_counter_{today_date}"
 command = ""
 if config['mode'] == "time":
     mode = "time"
-    command = ["time", "-f", "Real time: %E, User time: %U, System time: %S"]
+    command = []
 else:
     command = ["strace", "-f", "-o", output_log]
 command.extend(config['binary'].split(" "))
@@ -150,9 +152,16 @@ elif config['mode'] == "time":
     #
     for _ in range(config['iters']):
         try:
-            res = subprocess.run(command, check=True, stdout=subprocess.PIPE,
-                                 stderr=subprocess.PIPE, text=True)
-            r, u, s = parse_time(res.stderr)
+            ru0 = resource.getrusage(resource.RUSAGE_CHILDREN)
+            t0 = time.perf_counter()
+            subprocess.run(command, check=True, stdout=subprocess.DEVNULL,
+                           stderr=subprocess.DEVNULL, text=True)
+
+            t1 = time.perf_counter()
+            ru1 = resource.getrusage(resource.RUSAGE_CHILDREN)
+            r = t1 - t0
+            u = ru1.ru_utime - ru0.ru_utime
+            s = ru1.ru_stime - ru0.ru_stime
 
             malloc_real_times.append(r)
             malloc_user_times.append(u)
@@ -166,11 +175,16 @@ elif config['mode'] == "time":
     env['LD_PRELOAD'] = config['so_path']
     for _ in range(config['iters']):
         try:
-            res = subprocess.run(command, check=True, stdout=subprocess.PIPE, env=env,
-                                 stderr=subprocess.PIPE, text=True)
-            # print(res.stdout)
-            # print(res.stderr)
-            r, u, s = parse_time(res.stderr)
+            ru0 = resource.getrusage(resource.RUSAGE_CHILDREN)
+            t0 = time.perf_counter()
+            subprocess.run(command, check=True, stdout=subprocess.DEVNULL, env=env,
+                           stderr=subprocess.DEVNULL, text=True)
+
+            t1 = time.perf_counter()
+            ru1 = resource.getrusage(resource.RUSAGE_CHILDREN)
+            r = t1 - t0
+            u = ru1.ru_utime - ru0.ru_utime
+            s = ru1.ru_stime - ru0.ru_stime
 
             mimalloc_real_times.append(r)
             mimalloc_user_times.append(u)
