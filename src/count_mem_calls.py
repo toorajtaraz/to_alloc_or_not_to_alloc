@@ -172,8 +172,11 @@ elif config['mode'] == "time":
             print(f"App failed: {e}")
             exit(-1)
 
-    print(sum(alloc_real_times))
+    print(f"{sum(alloc_real_times)/len(alloc_real_times)
+             } {min(alloc_real_times)} {max(alloc_real_times)}")
 
-    print(sum(alloc_user_times))
+    print(f"{sum(alloc_user_times)/len(alloc_user_times)
+             } {min(alloc_user_times)} {max(alloc_user_times)}")
 
-    print(sum(alloc_system_times))
+    print(f"{sum(alloc_system_times)/len(alloc_system_times)
+             } {min(alloc_system_times)} {max(alloc_system_times)}")
