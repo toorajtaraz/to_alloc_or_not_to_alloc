@@ -1,0 +1,259 @@
+/home/ttaraz/project/lab/to_alloc_or_not_to_alloc
+/home/ttaraz/OpenFOAM/ttaraz-v2506/platforms/linux64GccDPInt32Opt/bin:/home/ttaraz/project/lab/to_alloc_or_not_to_alloc/apps/openfoam/site/2506/platforms/linux64GccDPInt32Opt/bin:/home/ttaraz/project/lab/to_alloc_or_not_to_alloc/apps/openfoam/platforms/linux64GccDPInt32Opt/bin:/home/ttaraz/project/lab/to_alloc_or_not_to_alloc/apps/openfoam/bin:/home/ttaraz/project/lab/to_alloc_or_not_to_alloc/apps/openfoam/wmake:/home/ttaraz/project/lab/to_alloc_or_not_to_alloc/installed_for_mem_alloc_exprs/bin:/home/ttaraz/.local/bin:/home/ttaraz/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-13.0/bin:/opt/mellanox/doca/tools/ %LD_LIBRARY_PATH
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full basic/laplacianFoam/flange
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012
+Running allocator=mimalloc
+  command=foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full combustion/chemFoam/h2
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full lagrangian/reactingParcelFoam/parcelInBox
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/lesFiles
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/motorBike
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full mesh/snappyHexMesh/motorBike_leakDetection
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full preProcessing/createZeroDirectory/motorBike
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full basic/laplacianFoam/flange
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012
+Running allocator=hoard
+  command=foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full combustion/chemFoam/h2
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full lagrangian/reactingParcelFoam/parcelInBox
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike
+Simulation failed/killed (exit code: 143), continuing...
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/lesFiles
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/motorBike
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full mesh/snappyHexMesh/motorBike_leakDetection
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full preProcessing/createZeroDirectory/motorBike
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full basic/laplacianFoam/flange
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012
+Running allocator=gnu
+  command=foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full combustion/chemFoam/h2
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full lagrangian/reactingParcelFoam/parcelInBox
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D
+⏭️  SKIPPING (command timed out previously)
+    allocator=gnu
+    command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/lesFiles
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/motorBike
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full mesh/snappyHexMesh/motorBike_leakDetection
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full preProcessing/createZeroDirectory/motorBike
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full basic/laplacianFoam/flange
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012
+Running allocator=jemalloc
+  command=foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full combustion/chemFoam/h2
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full lagrangian/reactingParcelFoam/parcelInBox
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D
+⏭️  SKIPPING (command timed out previously)
+    allocator=jemalloc
+    command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/lesFiles
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/motorBike
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full mesh/snappyHexMesh/motorBike_leakDetection
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full preProcessing/createZeroDirectory/motorBike
+
+allocator,command,total_mean,total_min,total_max,user_mean,user_min,user_max,system_mean,system_min,system_max
+mimalloc,"foamTestTutorial -parallel -full incompressible/icoFoam/cavity",2.6250467829406263,2.604696081019938,2.641412572003901,1.3842082,1.3770939999999998,1.3923059999999996,1.2374026,1.2122970000000004,1.257438
+mimalloc,"foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused",5.16333595905453,5.128571726381779,5.1966663505882025,14.7964466,14.619701,14.970917,3.0587992,3.009615,3.14413
+mimalloc,"foamTestTutorial -parallel -full basic/laplacianFoam/flange",1.4190011240541935,1.4057056782767177,1.4430979443714023,0.6918926,0.648628,0.7957380000000001,1.1829234,1.131374,1.334847
+mimalloc,"foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity",25.768812359683217,24.9119470724836,26.211722844280303,71.6663776,68.49891699999999,73.28843,9.9750608,9.815029000000001,10.140091000000002
+mimalloc,"foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012",13.70088160187006,13.324882666580379,14.44908744096756,75.4554176,72.32381199999998,80.203272,7.5421886,7.180325,8.167957
+mimalloc,"foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+mimalloc,"foamTestTutorial -parallel -full combustion/chemFoam/h2",0.40512070190161464,0.3864329485222697,0.42850794829428196,0.1692812,0.15702400000000005,0.18259199999999998,0.245241,0.21604200000000007,0.25968899999999995
+mimalloc,"foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC",38.822866367548706,38.73143384233117,38.96568139735609,38.029353,37.9187,38.141054999999994,0.708081,0.6594059999999999,0.7322789999999997
+mimalloc,"foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak",10.989903279952705,10.643318522721529,11.420782412402332,22.200703999999998,21.243314999999996,23.608018,2.0900006,1.9962309999999999,2.211847
+mimalloc,"foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak",68.66521342601627,67.79442042391747,70.26203044876456,265.80937600000004,262.410611,271.909707,3.1170828,3.002014,3.27234
+mimalloc,"foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag",260.33911640830337,259.38270833157003,261.02215391397476,142.49983600000002,141.482302,142.87564700000001,119.24000559999999,118.82816199999999,119.508244
+mimalloc,"foamTestTutorial -parallel -full lagrangian/reactingParcelFoam/parcelInBox",1.629598530381918,1.598402751609683,1.6585248354822397,1.2887466,1.266156,1.3248870000000004,0.3425372,0.325642,0.36057999999999996
+mimalloc,"foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+mimalloc,"foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn",7.390446383878588,7.0523504158481956,7.728488023392856,6.1016858,5.870687,6.278082999999999,1.2869541999999998,1.233155,1.337415
+mimalloc,"foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+mimalloc,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike",120.30480238776654,113.99907038267702,125.95528284832835,903.8101966,854.8639840000001,947.75117,17.8417008,17.112721999999998,18.450744999999998
+mimalloc,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/lesFiles",2.3470285438001155,2.2836305340752006,2.4003184596076608,0.3394324,0.309976,0.37016299999999996,0.7878681999999999,0.7668490000000001,0.809456
+mimalloc,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/motorBike",11.620101640559733,11.095899016596377,12.095056780613959,52.8751584,48.37259799999998,57.664213,8.8411664,8.563568000000004,9.041735000000001
+mimalloc,"foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike",287.4708618501201,196.2725739274174,381.2907390985638,1662.1653620000002,1119.9238730000002,2219.9917009999995,30.2049252,25.447945,35.202115
+mimalloc,"foamTestTutorial -parallel -full mesh/snappyHexMesh/motorBike_leakDetection",85.87565649840981,70.60435342788696,96.65302334539592,475.866343,386.72371099999987,537.7598539999999,13.188103000000002,10.475488999999996,15.342410000000008
+mimalloc,"foamTestTutorial -parallel -full preProcessing/createZeroDirectory/motorBike",50.76359549537301,46.59071761276573,60.93233815673739,263.004873,238.83841699999994,323.0642889999999,12.4405032,11.132261,13.259044999999997
+hoard,"foamTestTutorial -parallel -full incompressible/icoFoam/cavity",3.2743299515917896,3.1749043771997094,3.3248450504615903,1.6293731999999999,1.5696639999999995,1.6757739999999997,1.6445732,1.602856,1.6914229999999995
+hoard,"foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused",6.106279477477074,5.743670284748077,6.375340259633958,14.731054,13.672296000000003,15.795933999999995,7.5463752,6.6889199999999995,8.23352
+hoard,"foamTestTutorial -parallel -full basic/laplacianFoam/flange",1.4450715731829404,1.4183663688600063,1.481592195108533,0.6956406,0.658725,0.7401339999999998,1.1455662,1.105095,1.1820250000000003
+hoard,"foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity",27.251271227933465,26.812858358956873,27.885483124293387,72.8031436,71.308187,75.171988,13.755925600000001,13.540694000000002,13.988551000000001
+hoard,"foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012",18.45135445278138,17.521833767183125,20.91586861666292,87.306416,83.833778,95.43223899999998,31.963534,27.668207000000002,43.307760999999985
+hoard,"foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+hoard,"foamTestTutorial -parallel -full combustion/chemFoam/h2",0.46503712721168994,0.4407947454601526,0.476649503223598,0.2042256,0.18804899999999997,0.216723,0.2736934,0.25587899999999997,0.286748
+hoard,"foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC",40.08188989404589,39.86735710222274,40.3167556039989,38.251451200000005,38.102181,38.446927,1.7370452,1.6649370000000001,1.836418
+hoard,"foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak",14.572949410602451,14.110387291759253,15.103131408803165,24.2634792,23.69145900000001,25.232158,10.2243858,8.857742000000002,11.292783
+hoard,"foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak",77.44956724252552,76.25996664911509,80.32494234386832,280.1295624,276.946283,286.1845639999999,23.424149399999997,21.834468,28.849328
+hoard,"foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag",273.780072484538,272.2531835399568,276.6392681496218,151.5942432,150.68334899999996,153.707546,124.5335018,123.921945,125.26907
+hoard,"foamTestTutorial -parallel -full lagrangian/reactingParcelFoam/parcelInBox",1.992022973485291,1.899524082429707,2.0683424454182386,1.3797278,1.322121,1.4534880000000001,0.6200446000000001,0.583863,0.640109
+hoard,"foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+hoard,"foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn",8.207442136481404,7.792429983615875,8.500614188611507,6.5360506,6.073939,6.805804999999999,1.7273342,1.697769,1.7738779999999998
+hoard,"foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+hoard,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike",143,143,143,143,143,143,143,143,143
+hoard,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/lesFiles",2.4203326726332306,2.3060386078432202,2.573568149469793,0.3520618,0.3435039999999998,0.373467,0.7900335999999999,0.720669,0.846784
+hoard,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/motorBike",12.725813617929816,12.284771039150655,13.704986428841949,54.921747,52.28390500000003,59.894583,14.3619102,13.531026999999998,15.420832
+hoard,"foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike",318.5886993000284,245.2700210744515,377.7097780657932,1487.8556914,1156.009661,1800.949111,382.078308,273.701434,422.5084039999999
+hoard,"foamTestTutorial -parallel -full mesh/snappyHexMesh/motorBike_leakDetection",88.62149977814406,86.66672126948833,95.25254752859473,466.19564479999997,455.142526,501.53600800000004,37.3208112,35.837916,41.684197
+hoard,"foamTestTutorial -parallel -full preProcessing/createZeroDirectory/motorBike",70.76277008019387,62.222593788057566,77.13821460772306,356.3985664,311.225641,389.02233,36.3826444,30.534561999999994,41.647907000000004
+gnu,"foamTestTutorial -parallel -full incompressible/icoFoam/cavity",2.47601949442178,2.4147957172244787,2.5150731867179275,1.345426,1.308356,1.367531,1.1244998000000002,1.104088,1.145177
+gnu,"foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused",5.337028392776847,5.233718193136156,5.389445725828409,15.176458400000001,14.703203,15.512312000000001,3.5232088,3.4582740000000003,3.6181330000000003
+gnu,"foamTestTutorial -parallel -full basic/laplacianFoam/flange",1.3722550515085459,1.3348049717023969,1.4130652686581016,0.7456136,0.653312,0.8215819999999999,1.194323,1.065567,1.282271
+gnu,"foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity",26.660853839479387,26.05801079981029,27.15162905305624,74.9589524,72.75774200000001,76.56680799999998,10.067196800000001,9.802704,10.292541
+gnu,"foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012",14.006100962497294,13.70748646184802,14.748282002285123,76.55515779999999,74.29476,81.224918,8.450937999999999,8.247283999999993,8.978409
+gnu,"foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+gnu,"foamTestTutorial -parallel -full combustion/chemFoam/h2",0.3469148386269808,0.32515960559248924,0.35910598933696747,0.1482136,0.131065,0.15734399999999998,0.2034428,0.18567799999999998,0.21074399999999993
+gnu,"foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC",43.83524122722447,43.65377533528954,44.05070588737726,39.347247599999996,39.212303,39.40058,4.4071248,4.332053,4.552579999999999
+gnu,"foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak",10.781792847439647,10.72570835519582,10.901398329995573,21.5013662,21.386597000000002,21.75635700000001,2.3304594,2.2531289999999995,2.489652
+gnu,"foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak",67.81778200976551,67.56589396297932,68.01423872914165,261.6786786,260.61804200000006,262.618715,4.0613344,3.928261,4.115964
+gnu,"foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag",250.07733153067528,248.84734528139234,251.13525291904807,139.1015544,138.075541,140.048267,111.9464976,111.626329,112.348794
+gnu,"foamTestTutorial -parallel -full lagrangian/reactingParcelFoam/parcelInBox",1.6972291691228747,1.665557307191193,1.7439699787646532,1.3956512,1.3630039999999999,1.4522090000000003,0.3018156,0.29404699999999995,0.3082020000000001
+gnu,"foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+gnu,"foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn",7.271017000265419,6.915479038842022,7.590425642207265,6.08754,5.889897000000001,6.3526370000000005,1.1478382,1.0676010000000002,1.229088
+gnu,"foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+gnu,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike",-60,-60,-60,-60,-60,-60,-60,-60,-60
+gnu,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/lesFiles",2.3829385358840227,2.357453948818147,2.4347177296876907,0.3367636,0.3320589999999999,0.347564,0.7835828,0.7721400000000002,0.7957540000000001
+gnu,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/motorBike",11.56229737382382,11.288706451654434,11.716256683692336,52.5011534,49.077386,53.69403,8.77745,8.316203,9.229146
+gnu,"foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike",255.90378284342586,195.8734992686659,342.8859279016033,1453.5724872,1098.2144529999996,1967.187647,46.6502964,35.51060800000002,57.44503900000001
+gnu,"foamTestTutorial -parallel -full mesh/snappyHexMesh/motorBike_leakDetection",84.35301612243056,78.56903955247253,104.19365278817713,465.87511539999997,428.6099199999999,583.799029,11.7771018,10.804907,13.526132
+gnu,"foamTestTutorial -parallel -full preProcessing/createZeroDirectory/motorBike",55.3073121862486,51.922302670776844,68.19394072890282,288.88257600000003,269.24404100000004,365.466541,11.5829336,11.017063999999998,12.325941
+jemalloc,"foamTestTutorial -parallel -full incompressible/icoFoam/cavity",2.5874744886532426,2.577703463844955,2.593096923083067,1.3867974,1.3791729999999998,1.395115,1.1977416,1.187621,1.2050599999999996
+jemalloc,"foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused",4.957979740388692,4.517051679082215,5.164751219563186,13.854964200000001,12.110776999999995,14.874103999999999,2.9388404,2.684315,3.0673190000000012
+jemalloc,"foamTestTutorial -parallel -full basic/laplacianFoam/flange",1.4016042336821557,1.3596895625814795,1.4297632770612836,0.7375982000000001,0.673792,0.8342229999999999,1.1790952000000001,1.0761269999999996,1.286536
+jemalloc,"foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity",26.159852708876134,25.701616800390184,26.7306111138314,72.9278336,71.34773399999997,74.836796,9.9438328,9.689774000000003,10.199190999999999
+jemalloc,"foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012",13.519633657298982,13.149175763130188,14.017768763005733,73.92553699999999,71.79348999999999,76.705105,7.4744206,7.221222000000001,7.900727
+jemalloc,"foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+jemalloc,"foamTestTutorial -parallel -full combustion/chemFoam/h2",0.3577683916315436,0.3495055204257369,0.36443125549703836,0.15019659999999999,0.13435699999999995,0.160075,0.217763,0.20908499999999997,0.240471
+jemalloc,"foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC",40.58279150798917,40.371443753130734,40.7898776633665,39.8215108,39.59487,40.135875999999996,0.6965936,0.6121040000000002,0.7864749999999999
+jemalloc,"foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak",10.725020019337535,10.627889135852456,10.99330928735435,21.497638000000002,20.775843000000002,22.42576600000001,2.053687,1.9954100000000001,2.130261000000001
+jemalloc,"foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak",66.84264284688979,64.79348441120237,67.57616078201681,258.65613840000003,250.34293200000002,261.665875,3.0710572,2.99736,3.1572449999999996
+jemalloc,"foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag",255.98423157874495,255.0442814324051,256.7452898006886,142.3376072,141.422775,142.710563,115.282977,114.930386,115.686437
+jemalloc,"foamTestTutorial -parallel -full lagrangian/reactingParcelFoam/parcelInBox",1.61509176120162,1.5630657747387886,1.6467363173142076,1.3108936,1.2732919999999996,1.3370830000000002,0.3093466,0.2945190000000002,0.32578799999999997
+jemalloc,"foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+jemalloc,"foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn",7.318207441084087,7.049095124937594,7.620624612085521,6.1644124,5.909205,6.4529,1.2117444000000002,1.197108,1.2325819999999998
+jemalloc,"foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D",-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0,-1.0
+jemalloc,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike",-60,-60,-60,-60,-60,-60,-60,-60,-60
+jemalloc,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/lesFiles",2.4016867373138666,2.393049788661301,2.410224474966526,0.3473756,0.326423,0.3723179999999999,0.8035316,0.7829160000000002,0.8313679999999999
+jemalloc,"foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/motorBike",11.672072457149625,11.175882454030216,12.298450140282512,52.548870799999996,49.072047999999995,58.305038999999994,9.0552362,8.556168,9.916516
+jemalloc,"foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike",324.64285921212286,204.19954823702574,368.79206413030624,1878.501873,1159.4082990000006,2141.798669,34.8424584,30.391311,37.253498
+jemalloc,"foamTestTutorial -parallel -full mesh/snappyHexMesh/motorBike_leakDetection",84.03695838917047,75.52629198879004,95.55318894609809,465.791089,417.92699100000004,531.819571,13.0655858,11.705694000000001,14.796313
+jemalloc,"foamTestTutorial -parallel -full preProcessing/createZeroDirectory/motorBike",54.358589933626355,48.416036108508706,63.10720801819116,281.86867440000003,248.18744200000003,331.438535,12.935379800000002,11.379549999999995,15.450907999999998

@@ -1,0 +1,134 @@
+Warn: could not determine prefix for system-openmpi
+/home/ttaraz/project/lab/to_alloc_or_not_to_alloc
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full basic/laplacianFoam/flange
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/periodicHill
+⚠️  TIMEOUT → blacklisting command for ALL allocators
+    command=foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/periodicHill
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/surfaceMountedCube
+⚠️  TIMEOUT → blacklisting command for ALL allocators
+    command=foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/surfaceMountedCube
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full compressible/rhoPimpleFoam/RAS/annularThermalMixer
+⚠️  TIMEOUT → blacklisting command for ALL allocators
+    command=foamTestTutorial -parallel -full compressible/rhoPimpleFoam/RAS/annularThermalMixer
+Running allocator=mimalloc
+  command=foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full combustion/chemFoam/h2
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full combustion/reactingFoam/RAS/SandiaD_LTS
+⚠️  TIMEOUT → blacklisting command for ALL allocators
+    command=foamTestTutorial -parallel -full combustion/reactingFoam/RAS/SandiaD_LTS
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full multiphase/compressibleInterFoam/laminar/depthCharge3D
+⚠️  TIMEOUT → blacklisting command for ALL allocators
+    command=foamTestTutorial -parallel -full multiphase/compressibleInterFoam/laminar/depthCharge3D
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag
+⚠️  TIMEOUT → blacklisting command for ALL allocators
+    command=foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full lagrangian/reactingParcelFoam/parcelInBox
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/adjointOptimisationFoam/sensitivityMaps/motorBike
+⚠️  TIMEOUT → blacklisting command for ALL allocators
+    command=foamTestTutorial -parallel -full incompressible/adjointOptimisationFoam/sensitivityMaps/motorBike
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/adjointOptimisationFoam/shapeOptimisation/motorBike
+⚠️  TIMEOUT → blacklisting command for ALL allocators
+    command=foamTestTutorial -parallel -full incompressible/adjointOptimisationFoam/shapeOptimisation/motorBike
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/lesFiles
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/motorBike
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike
+⚠️  TIMEOUT → blacklisting command for ALL allocators
+    command=foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full mesh/snappyHexMesh/motorBike_leakDetection
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full multiphase/interFoam/RAS/motorBike
+⚠️  TIMEOUT → blacklisting command for ALL allocators
+    command=foamTestTutorial -parallel -full multiphase/interFoam/RAS/motorBike
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full preProcessing/createZeroDirectory/motorBike
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full basic/laplacianFoam/flange
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity
+⏭️  SKIPPING (command timed out previously)
+    allocator=hoard
+    command=foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/periodicHill
+⏭️  SKIPPING (command timed out previously)
+    allocator=hoard
+    command=foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/surfaceMountedCube
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012
+⏭️  SKIPPING (command timed out previously)
+    allocator=hoard
+    command=foamTestTutorial -parallel -full compressible/rhoPimpleFoam/RAS/annularThermalMixer
+Running allocator=hoard
+  command=foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full combustion/chemFoam/h2
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC
+⏭️  SKIPPING (command timed out previously)
+    allocator=hoard
+    command=foamTestTutorial -parallel -full combustion/reactingFoam/RAS/SandiaD_LTS
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak
+⏭️  SKIPPING (command timed out previously)
+    allocator=hoard
+    command=foamTestTutorial -parallel -full multiphase/compressibleInterFoam/laminar/depthCharge3D
+⏭️  SKIPPING (command timed out previously)
+    allocator=hoard
+    command=foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full lagrangian/reactingParcelFoam/parcelInBox
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D
+⏭️  SKIPPING (command timed out previously)
+    allocator=hoard
+    command=foamTestTutorial -parallel -full incompressible/adjointOptimisationFoam/sensitivityMaps/motorBike
+⏭️  SKIPPING (command timed out previously)
+    allocator=hoard
+    command=foamTestTutorial -parallel -full incompressible/adjointOptimisationFoam/shapeOptimisation/motorBike
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike

@@ -1,0 +1,4 @@
+/home/ttaraz/project/lab/to_alloc_or_not_to_alloc
+/home/ttaraz/OpenFOAM/ttaraz-v2506/platforms/linux64GccDPInt32Opt/bin:/home/ttaraz/project/lab/to_alloc_or_not_to_alloc/apps/openfoam/site/2506/platforms/linux64GccDPInt32Opt/bin:/home/ttaraz/project/lab/to_alloc_or_not_to_alloc/apps/openfoam/platforms/linux64GccDPInt32Opt/bin:/home/ttaraz/project/lab/to_alloc_or_not_to_alloc/apps/openfoam/bin:/home/ttaraz/project/lab/to_alloc_or_not_to_alloc/apps/openfoam/wmake:/home/ttaraz/project/lab/to_alloc_or_not_to_alloc/installed_for_mem_alloc_exprs/bin:/home/ttaraz/.local/bin:/home/ttaraz/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-13.0/bin:/opt/mellanox/doca/tools/ %LD_LIBRARY_PATH
+Running allocator=mimalloc
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity

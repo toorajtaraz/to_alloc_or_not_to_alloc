@@ -1,19 +1,23 @@
 /home/ttaraz/project/lab/to_alloc_or_not_to_alloc
 Running allocator=mimalloc
   command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
-Running allocator=mimalloc
-  command=foamTestTutorial -parallel -full incompressible/simpleFoam/pitzDaily_fused
-Running allocator=mimalloc
-  command=foamTestTutorial -parallel -full basic/laplacianFoam/flange
-Running allocator=mimalloc
-  command=foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity
-Running allocator=mimalloc
-  command=foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012
-Running allocator=mimalloc
-  command=foamTestTutorial -parallel -full compressible/rhoCentralFoam/shockTube
-Running allocator=mimalloc
-  command=foamTestTutorial -parallel -full combustion/chemFoam/h2
-Running allocator=mimalloc
-  command=foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC
-Running allocator=mimalloc
-  command=foamTestTutorial -parallel -full combustion/reactingFoam/RAS/SandiaD_LTS
+
+⚠️  TIMEOUT after 1s
+Running allocator=hoard
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
+
+⚠️  TIMEOUT after 1s
+Running allocator=gnu
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
+
+⚠️  TIMEOUT after 1s
+Running allocator=jemalloc
+  command=foamTestTutorial -parallel -full incompressible/icoFoam/cavity
+
+⚠️  TIMEOUT after 1s
+
+allocator,command,total_mean,total_min,total_max,user_mean,user_min,user_max,system_mean,system_min,system_max
+mimalloc,"foamTestTutorial -parallel -full incompressible/icoFoam/cavity",-60,-60,-60,-60,-60,-60,-60,-60,-60
+hoard,"foamTestTutorial -parallel -full incompressible/icoFoam/cavity",-60,-60,-60,-60,-60,-60,-60,-60,-60
+gnu,"foamTestTutorial -parallel -full incompressible/icoFoam/cavity",-60,-60,-60,-60,-60,-60,-60,-60,-60
+jemalloc,"foamTestTutorial -parallel -full incompressible/icoFoam/cavity",-60,-60,-60,-60,-60,-60,-60,-60,-60

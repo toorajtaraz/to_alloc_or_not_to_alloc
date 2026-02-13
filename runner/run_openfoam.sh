@@ -7,16 +7,21 @@
 PROJECT_ROOT="/home/ttaraz/project/lab/to_alloc_or_not_to_alloc"
 ALLOC_LIB_DIR="$PROJECT_ROOT/installed_for_mem_alloc_exprs/lib"
 
+export LD_LIBRARY_PATH="$PROJECT_ROOT/installed_for_mem_alloc_exprs/lib/:$PROJECT_ROOT/installed_for_mem_alloc_exprs/lib64:${LD_LIBRARY_PATH:-}"
+export PATH="$PROJECT_ROOT/installed_for_mem_alloc_exprs/bin:${PATH}"
+
 cd "$PROJECT_ROOT/apps/openfoam/"
 source "./etc/bashrc"
 cd -
 
 
 set -euo pipefail
-export LD_LIBRARY_PATH="$PROJECT_ROOT/installed_for_mem_alloc_exprs/lib:${LD_LIBRARY_PATH:-}"
-export PATH="$PROJECT_ROOT/installed_for_mem_alloc_exprs/bin:${PATH}"
+
+systemd-run --user --scope --quiet --slice=simulation.slice \
+	bash -c "echo \$PATH \%LD_LIBRARY_PATH"
 
 PYTHON_SCRIPT="src/count_mem_calls.py"
+TIMEOUT_SEC=3600
 
 
 ########################################
@@ -539,23 +544,23 @@ COMMANDS=(
 
   # Transient incompressible (PISO / PIMPLE, LES)
   "foamTestTutorial -parallel -full incompressible/pisoFoam/RAS/cavity"
-  # "foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/periodicHill"
-  # "foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/surfaceMountedCube"
+#  "foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/periodicHill"
+#  "foamTestTutorial -parallel -full incompressible/pimpleFoam/LES/surfaceMountedCube"
 
   # Compressible flow (larger fields, shocks)
   "foamTestTutorial -parallel -full compressible/rhoSimpleFoam/aerofoilNACA0012"
-  # "foamTestTutorial -parallel -full compressible/rhoPimpleFoam/RAS/annularThermalMixer"
-  "foamTestTutorial -parallel -full compressible/rhoCentralFoam/shockTube"
+#  "foamTestTutorial -parallel -full compressible/rhoPimpleFoam/RAS/annularThermalMixer"
+  "foamTestTutoria -parallel -full compressible/rhoCentralFoam/shockTube"
 
   # Combustion / chemistry (allocation churn)
   "foamTestTutorial -parallel -full combustion/chemFoam/h2"
   "foamTestTutorial -parallel -full combustion/chemFoam/ic8h18_TDAC"
-  "foamTestTutorial -parallel -full combustion/reactingFoam/RAS/SandiaD_LTS"
+#  "foamTestTutorial -parallel -full combustion/reactingFoam/RAS/SandiaD_LTS"
 
   # Multiphase (VOF / interface tracking)
   "foamTestTutorial -parallel -full multiphase/interFoam/laminar/damBreak"
   "foamTestTutorial -parallel -full multiphase/interIsoFoam/damBreak"
-  "foamTestTutorial -parallel -full multiphase/compressibleInterFoam/laminar/depthCharge3D"
+#  "foamTestTutorial -parallel -full multiphase/compressibleInterFoam/laminar/depthCharge3D"
 
   # Lagrangian particles (small-object churn, migration)
   "foamTestTutorial -parallel -full lagrangian/kinematicParcelFoam/particleDrag"
@@ -565,6 +570,16 @@ COMMANDS=(
   "foamTestTutorial -parallel -full incompressible/overPimpleDyMFoam/cylinder"
   "foamTestTutorial -parallel -full mesh/moveDynamicMesh/twistingColumn"
   "foamTestTutorial -parallel -full incompressible/pimpleFoam/laminar/mixerVesselAMI2D"
+  # MotoBike Simulations
+#  "foamTestTutorial -parallel -full incompressible/adjointOptimisationFoam/sensitivityMaps/motorBike"
+#  "foamTestTutorial -parallel -full incompressible/adjointOptimisationFoam/shapeOptimisation/motorBike"
+  "foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike"
+  "foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/lesFiles"
+  "foamTestTutorial -parallel -full incompressible/pisoFoam/LES/motorBike/motorBike"
+  "foamTestTutorial -parallel -full incompressible/simpleFoam/motorBike"
+  "foamTestTutorial -parallel -full mesh/snappyHexMesh/motorBike_leakDetection"
+#  "foamTestTutorial -parallel -full multiphase/interFoam/RAS/motorBike"
+  "foamTestTutorial -parallel -full preProcessing/createZeroDirectory/motorBike"
 )
 
 ########################################
@@ -583,55 +598,95 @@ declare -A results
 ########################################
 # Run experiments
 ########################################
+declare -A SKIP_COMMAND
 
 for allocator in "${!ALLOCATORS[@]}"; do
   allocator_lib="${ALLOCATORS[$allocator]}"
 
   for cmd in "${COMMANDS[@]}"; do
+    key_prefix="${allocator}|${cmd}"
+
+    ####################################
+    # Skip command globally if blacklisted
+    ####################################
+    if [[ -n "${SKIP_COMMAND["$cmd"]:-}" ]]; then
+      echo "⏭️  SKIPPING (command timed out previously)"
+      echo "    allocator=${allocator}"
+      echo "    command=${cmd}"
+
+      for metric in total user system; do
+        results["$key_prefix|${metric}_mean"]="-60"
+        results["$key_prefix|${metric}_min"]="-60"
+        results["$key_prefix|${metric}_max"]="-60"
+      done
+
+      continue
+    fi
+
     echo "Running allocator=${allocator}"
     echo "  command=${cmd}"
 
+    ####################################
+    # Run with timeout (set -e safe)
+    ####################################
+    set +e
     if [[ -n "$allocator_lib" ]]; then
       output=$(
-        python3 "$PYTHON_SCRIPT" \
-          -c "$cmd" \
-          time \
-          --iters 1 \
-          --ldpreload "$ALLOC_LIB_DIR" \
-          --allocator-replacement "$allocator_lib"
+        systemd-run --user --scope --quiet --slice=simulation.slice \
+          timeout "$TIMEOUT_SEC" \
+    	python3 "$PYTHON_SCRIPT" \
+    	  -c "$cmd" \
+    	  time \
+    	  --iters 5 \
+    	  --ldpreload "$ALLOC_LIB_DIR" \
+    	  --allocator-replacement "$allocator_lib" \
+          2>&1
       )
+      ret=$?
     else
-      # GNU malloc (no replacement)
       output=$(
-        python3 "$PYTHON_SCRIPT" \
-          -c "$cmd" \
-          time \
-          --iters 1
+        systemd-run --user --scope --quiet --slice=simulation.slice \
+          timeout "$TIMEOUT_SEC" \
+    	python3 "$PYTHON_SCRIPT" \
+    	  -c "$cmd" \
+    	  time \
+    	  --iters 5 \
+          2>&1
       )
+      ret=$?
+    fi
+    set -e
+    
+    # Optional: check what happened
+    if [ $ret -ne 0 ]; then
+      echo "Simulation failed/killed (exit code: $ret), continuing..."
+
+      SKIP_COMMAND["$cmd"]=1
+
+      for metric in total user system; do
+        results["$key_prefix|${metric}_mean"]="$ret"
+        results["$key_prefix|${metric}_min"]="$ret"
+        results["$key_prefix|${metric}_max"]="$ret"
+      done
+
+      continue
     fi
 
     ####################################
     # Parse output
     ####################################
-    # Expect exactly 3 lines:
-    # total:  mean min max
-    # user:   mean min max
-    # system: mean min max
-
     readarray -t lines <<< "$output"
 
     if [[ "${#lines[@]}" -ne 3 ]]; then
       echo "ERROR: Expected 3 lines of output, got ${#lines[@]}"
       echo "Output was:"
       echo "$output"
-      exit 1
+      continue
     fi
 
     read total_mean total_min total_max <<< "${lines[0]}"
     read user_mean  user_min  user_max  <<< "${lines[1]}"
     read sys_mean   sys_min   sys_max   <<< "${lines[2]}"
-
-    key_prefix="${allocator}|${cmd}"
 
     results["$key_prefix|total_mean"]="$total_mean"
     results["$key_prefix|total_min"]="$total_min"
@@ -646,6 +701,9 @@ for allocator in "${!ALLOCATORS[@]}"; do
     results["$key_prefix|system_max"]="$sys_max"
   done
 done
+
+
+
 
 ########################################
 # Dump results (CSV)
