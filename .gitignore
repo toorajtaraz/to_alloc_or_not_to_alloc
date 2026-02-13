@@ -1,2 +1,3 @@
 *.log
 installed_for_mem_alloc_exprs
+venv
